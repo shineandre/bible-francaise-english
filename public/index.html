@@ -3,10 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <title>Bible Francaise English</title>
-  <script type="module" src="/src/main.js"></script>
 </head>
 <body>
   <h1>📖 Bible Francaise English</h1>
   <p>The Word of God is Alive – La Parole de Dieu est Vivante</p>
+
+  <!-- ── Firebase + App Check Initialization ── -->
+  <script type="module">
+    // 1) Import Firebase apps and App Check
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+    import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app-check.js";
+
+    // 2) Your Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCN0uXzYYU6j00ULP9J7TMCx7hUm0DmxP4",
+      authDomain: "bible-francaise-english.firebaseapp.com",
+      projectId: "bible-francaise-english",
+      storageBucket: "bible-francaise-english.appspot.com",
+      messagingSenderId: "179913240048",
+      appId: "1:179913240048:web:7a37b5c65d4a5b104dc135",
+      measurementId: "G-BCTR8KBB52"
+    };
+
+    // 3) Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    // 4) Initialize App Check with your reCAPTCHA v3 site key
+    const appCheck = initializeAppCheck(app, {
+      provider: new ReCaptchaV3Provider("YOUR_SITE_KEY_HERE"),
+      isTokenAutoRefreshEnabled: true
+    });
+
+    console.log("Firebase initialized with App Check:", app, appCheck);
+  </script>
 </body>
 </html>
