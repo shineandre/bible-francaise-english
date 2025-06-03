@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Bible Francaise English</title>
@@ -10,11 +10,11 @@
 
     <!-- ── Firebase + App Check Initialization ── -->
     <script type="module">
-      // 1) Import the Firebase and App Check SDKs from the CDN
+      // Import Firebase and App Check SDKs
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
       import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app-check.js";
 
-      // 2) Use the same Firebase config you put in firebase-config.js
+      // Firebase config
       const firebaseConfig = {
         apiKey: "AIzaSyCN0uXzYYU6j00ULP9J7TMCx7hUm0DmxP4",
         authDomain: "bible-francaise-english.firebaseapp.com",
@@ -25,11 +25,10 @@
         measurementId: "G-BCTR8KBB52"
       };
 
-      // 3) Initialize Firebase
+      // Initialize Firebase
       const app = initializeApp(firebaseConfig);
 
-      // 4) Initialize App Check with your reCAPTCHA v3 Site Key
-      //    Replace "YOUR_SITE_KEY_HERE" with the actual Site Key from Firebase App Check
+      // App Check with reCAPTCHA v3
       const appCheck = initializeAppCheck(app, {
         provider: new ReCaptchaV3Provider("6Ld59FMrAAAAALKB1AQCtXHCEK86pJ65ArqZy9By"),
         isTokenAutoRefreshEnabled: true
