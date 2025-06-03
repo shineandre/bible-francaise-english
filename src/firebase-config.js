@@ -1,9 +1,10 @@
 // src/firebase-config.js
 
+// 1) Import the functions you need from the Firebase SDKs
 import { initializeApp } from "firebase/app";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
-// ✅ Your Firebase configuration
+// 2) Your Firebase configuration (keep your actual keys here)
 const firebaseConfig = {
   apiKey: "AIzaSyCN0uXzYYU6j00ULP9J7TMCx7hUm0DmxP4",
   authDomain: "bible-francaise-english.firebaseapp.com",
@@ -14,14 +15,15 @@ const firebaseConfig = {
   measurementId: "G-BCTR8KBB52"
 };
 
-// ✅ Initialize Firebase
+// 3) Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// ✅ Initialize App Check with reCAPTCHA v3
+// 4) Initialize App Check with your reCAPTCHA v3 site key
+//    Replace "YOUR_SITE_KEY_HERE" with the actual Site Key you got from Firebase App Check
 const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider("YOUR_SITE_KEY_HERE"),
+  provider: new ReCaptchaV3Provider("6Ld59FMrAAAAALKB1AQCtXHCEK86pJ65ArqZy9By"),
   isTokenAutoRefreshEnabled: true
 });
 
-// 👇 You can export app for use in other files
+// 5) Export the initialized Firebase App so that other files can import it if needed
 export default app;
