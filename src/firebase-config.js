@@ -1,0 +1,14 @@
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCN0uXzYYU6j00ULP9J7TMCx7hUm0DmxP4",
+  authDomain: "bible-francaise-english.firebaseapp.com",
+  projectId: "bible-francaise-english",
+  storageBucket: "bible-francaise-english.firebasestorage.app",
+  messagingSenderId: "179913240048",
+  appId: "1:179913240048:web:7a37b5c65d4a5b104dc135",
+  measurementId: "G-BCTR8KBB52"
+};
+
+const app = initializeApp(firebaseConfig);
+export default app;
